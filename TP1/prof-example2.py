@@ -4,10 +4,13 @@ import numpy as np
 
 a = -4
 b = 4
-n = 7
+n = 29
 X = np.linspace(a, b, n)
+def test(x):
+    return (1/(1+10*x**2))
 
-Y = np.sin(X)
+
+Y = test(X)
 
 V = np.vander(X, increasing=True)
 A = np.linalg.solve(V, Y)
@@ -22,7 +25,7 @@ def pol_interp(A, x):
 
 
 Xaff = np.linspace(a,b,1000)
-Yexa = np.sin(Xaff)
+Yexa = test(Xaff)
 Yestim = []
 for k in range(1000):
     Yestim.append(pol_interp(A, Xaff[k]))
@@ -35,4 +38,6 @@ print(Erreur)
 #pour n=7, erreur vaut 0.08293762292804946
 plt.plot(Xaff, Yexa)
 plt.plot(Xaff, Yestim)
+plt.xlim((a,b))
+plt.ylim((-2,2))
 plt.show()
