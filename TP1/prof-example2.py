@@ -4,7 +4,7 @@ import numpy as np
 
 a = -4
 b = 4
-n = 29
+n = 70
 X = np.linspace(a, b, n)
 def test(x):
     return (1/(1+10*x**2))
@@ -36,8 +36,12 @@ E = np.abs(Yexa-Yestim)
 Erreur = np.max(E)
 print(Erreur)
 #pour n=7, erreur vaut 0.08293762292804946
-plt.plot(Xaff, Yexa)
-plt.plot(Xaff, Yestim)
+plt.plot(Xaff, Yexa, label='Fonction réelle')
+plt.plot(Xaff, Yestim, label='Polynôme interpolateur')
+plt.legend()  # Ajoute une légende
+plt.title("Interpolation polynomiale de la fonction 1/(1+10*x**2), pour n="+str(n))
+plt.xlabel('x')
+plt.ylabel('y')
 plt.xlim((a,b))
 plt.ylim((-2,2))
 plt.show()
