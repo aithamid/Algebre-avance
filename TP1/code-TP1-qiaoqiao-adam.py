@@ -2,12 +2,12 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Paramètre 
+# Paramètre
 a = -4
 b = 4
 n = 70
 '''en sortie [-4 -2 0 2 4 ]'''
-#On recupère les valeurs x 
+#On recupère les valeurs x
 X = np.linspace(a, b, n)
 
 #autre fonction de test (1/(1+10*x**2))
@@ -15,11 +15,11 @@ X = np.linspace(a, b, n)
 #    return (1/(1+10*x**2))
 
 #On recupère les resultat de sin(x)
-'''Fonction de test sin''' 
+'''Fonction de test sin'''
 
 Y = np.sin(X)
 
-#autre fonction de test 
+#autre fonction de test
 #Y = test(X)
 
 
