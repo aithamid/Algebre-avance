@@ -16,8 +16,8 @@ def f(X):
 a = 0
 b = 2 * math.pi
 n = 100
-
-X = np.linspace(a, b, 5)
+n_x = 4
+X = np.linspace(a, b, n_x)
 Y = f(X)
 
 
@@ -62,7 +62,7 @@ plt.plot(X_aff, Y_aff, "r", label='Y_exact : Fonction réelle')
 plt.plot(X_aff, Y_estim, "b", label='Y_estim : Polynôme interpolateur')
 plt.plot(X_aff, new_Y, 'g--', label='new_Y : Polynôme après ajout du point A')
 plt.legend(loc='lower left', framealpha=1, frameon=True)  # Ajoute une légende
-plt.title("Interpolation polynomiale base Newton de la fonction sin(x), pour n=" + str(n))
+plt.title("Interpolation polynomiale base Newton de la fonction sin(x), pour n=" + str(n_x))
 plt.xlabel('x')
 plt.ylabel('y')
 plt.show()
