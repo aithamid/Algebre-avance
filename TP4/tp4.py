@@ -39,7 +39,7 @@ def affichage(control_points, curve_points):
     plt.show()
 
 # Points de contrôle
-control_points = [(0, 0), (1, 3), (2, 3), (3, 0)]
+control_points = [(0, 0), (1, 2), (2, 3), (3, 0)]
 curve_points = bezier(control_points)
 affichage(control_points, curve_points)
 
