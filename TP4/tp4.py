@@ -22,23 +22,25 @@ def bezier(control_points, n_points=1000):
         curve_points.append((x, y))
     return curve_points
 
+def affichage(control_points, curve_points):
+    # Affichage des points de contrôle
+    control_x, control_y = zip(*control_points)
+
+    # Affichage de la courbe de Bézier
+    curve_x, curve_y = zip(*curve_points)
+
+    # Tracer les points de contrôle et la courbe de Bézier
+    plt.scatter(control_x, control_y, color='red', label='Points de contrôle')
+    plt.plot(curve_x, curve_y, color='blue', label='Courbe de Bézier')
+
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.legend()
+    plt.show()
+
 # Points de contrôle
-control_points = [(0, 0), (1, 3), (2, 3), (3, 0)]
-
-# Calcul des points de la courbe de Bézier
+control_points = [(0, 0), (1, 2), (2, 3), (3, 0)]
 curve_points = bezier(control_points)
+affichage(control_points, curve_points)
 
-# Affichage des points de contrôle
-control_x, control_y = zip(*control_points)
 
-# Affichage de la courbe de Bézier
-curve_x, curve_y = zip(*curve_points)
-
-# Tracer les points de contrôle et la courbe de Bézier
-plt.scatter(control_x, control_y, color='red', label='Points de contrôle')
-plt.plot(curve_x, curve_y, color='blue', label='Courbe de Bézier')
-
-plt.xlabel('x')
-plt.ylabel('y')
-plt.legend()
-plt.show()
