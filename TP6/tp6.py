@@ -38,10 +38,17 @@ def foncHermite(X,Y,V,x):
        result+=Y[i]*phi0(t)+Y[i+1]*phi1(t)+d*(V[i]*phi2(t)+V[i+1]*phi3(t))
     return result
 
+B=[]
 def Spline():
-    
+    n = len(X)-1
+    B[0]=(3/d)*(Y[1]-Y[0])
+    for i in range(n):
+        if i>0:
+            d=X[i+1]-X[i]
+            B[i]=(3/d)*(Y[i+1]-Y[i-1])
 
-
+    for i in range(n):
+        
 
 
 X=[7,0,-8,-8,0,7]  
